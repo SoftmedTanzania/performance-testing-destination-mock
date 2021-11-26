@@ -9,9 +9,20 @@ import org.openhim.mediator.engine.messages.FinishRequest;
 import org.openhim.mediator.engine.messages.MediatorHTTPRequest;
 
 public class DefaultOrchestrator extends UntypedActor {
+    /**
+     * The logger instance.
+     */
     LoggingAdapter log = Logging.getLogger(getContext().system(), this);
 
+    /**
+     * The mediator configuration.
+     */
     private final MediatorConfig config;
+
+    /**
+     * Represents a mediator request.
+     */
+    protected MediatorHTTPRequest originalRequest;
 
 
     public DefaultOrchestrator(MediatorConfig config) {
@@ -21,7 +32,11 @@ public class DefaultOrchestrator extends UntypedActor {
     @Override
     public void onReceive(Object msg) throws Exception {
         if (msg instanceof MediatorHTTPRequest) {
-            FinishRequest finishRequest = new FinishRequest("A message from my new mediator!", "text/plain", HttpStatus.SC_OK);
+            originalRequest = (MediatorHTTPRequest) msg;
+
+            log.info("Received request: " + originalRequest.getHost() + " " + originalRequest.getMethod() + " " + originalRequest.getPath() + " " + originalRequest.getBody());
+
+            FinishRequest finishRequest = new FinishRequest("{\"success\":\"true\"}", "text/json", HttpStatus.SC_OK);
             ((MediatorHTTPRequest) msg).getRequestHandler().tell(finishRequest, getSelf());
         } else {
             unhandled(msg);

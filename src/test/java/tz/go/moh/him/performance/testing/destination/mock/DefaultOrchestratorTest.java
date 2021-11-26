@@ -39,7 +39,7 @@ public class DefaultOrchestratorTest {
     @Test
     public void testMediatorHTTPRequest() throws Exception {
         new JavaTestKit(system) {{
-            final MediatorConfig testConfig = new MediatorConfig("perfomance-testing-destination-mock", "localhost", 4000);
+            final MediatorConfig testConfig = new MediatorConfig("performance-testing-destination-mock", "localhost", 4000);
             final ActorRef defaultOrchestrator = system.actorOf(Props.create(DefaultOrchestrator.class, testConfig));
 
             MediatorHTTPRequest POST_Request = new MediatorHTTPRequest(
