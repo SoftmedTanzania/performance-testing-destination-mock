@@ -1,0 +1,33 @@
+{
+  "urn": "urn:uuid:70691430-4e69-11ec-83f8-cbbb49e93173",
+  "version": "0.1.0",
+  "name": "Sample Perfomance Testing Destination",
+  "description": "This mediator mocks a sample destination and returns success messages after receiving requests. It used while perfoming perfomance testing",
+  "endpoints": [
+    {
+      "name": "Sample Perfomance Testing Destination Route",
+      "host": "localhost",
+      "port": "4000",
+      "path": "/destination",
+      "type": "http"
+    }
+  ],
+  "defaultChannelConfig": [
+    {
+      "name": "Sample Perfomance Testing Destination",
+      "urlPattern": "^/destination$",
+      "type": "http",
+      "allow": ["sampleperfomancetestingdestination"],
+      "routes": [
+        {
+          "name": "Sample Perfomance Testing Destination Route",
+          "host": "localhost",
+          "port": "4000",
+          "path": "/destination",
+          "type": "http",
+          "primary": "true"
+        }
+      ]
+    }
+  ]
+}
