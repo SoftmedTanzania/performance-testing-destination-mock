@@ -1,5 +1,6 @@
 # Performance Testing Destination System Mock
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/46c31ddf7d9a40139a002a9425a4f07f)](https://app.codacy.com/gh/SoftmedTanzania/performance-testing-destination-mock?utm_source=github.com&utm_medium=referral&utm_content=SoftmedTanzania/performance-testing-destination-mock&utm_campaign=Badge_Grade_Settings)
 [![Java CI Badge](https://github.com/SoftmedTanzania/performance-testing-destination-mock/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SoftmedTanzania/performance-testing-destination-mock/actions?query=workflow%3A%22Java+CI+with+Maven%22)
 [![Coverage Status](https://coveralls.io/repos/github/SoftmedTanzania/performance-testing-destination-mock/badge.svg?branch=main)](https://coveralls.io/github/SoftmedTanzania/performance-testing-destination-mock?branch=main)
 
